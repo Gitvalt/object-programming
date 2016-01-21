@@ -37,10 +37,24 @@ namespace tehtava4
     {
         static void Main(string[] args)
         {
-            vehicle vh1 = new vehicle("Scoda GT", 200, 14);
+            /*vehicle vh1 = new vehicle("Scoda GT", 200, 14);
             vh1.PrintData();
             Console.WriteLine("\n");
             vh1.ToString();
+            */
+            Console.WriteLine("Kirjoita uuden ajoneuvon ominaisuudet: \nnimi: ");
+            string inputnim = Console.ReadLine();
+
+            Console.WriteLine("Nopeus: ");
+            int inputnopeus = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Rengas tyyppi: ");
+            int inputrengas = int.Parse(Console.ReadLine());
+
+            vehicle vh1 = new vehicle(inputnim, inputnopeus, inputrengas);
+            vh1.PrintData();
+            vh1.ToString();
+
             Console.ReadLine();
 
 
