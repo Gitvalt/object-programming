@@ -27,6 +27,8 @@ namespace Tehtava1
 
         }
 
+        
+
         public void lampotila()
         {
             Console.WriteLine("\nNykyinen lampotila on: " + lampo + "°C");

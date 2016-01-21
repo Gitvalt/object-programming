@@ -15,6 +15,19 @@ namespace tehtava4
             this.tyres = tyres;
         }
 
+        public void PrintData()
+        {
+            Console.WriteLine("Nimi: " + name);
+            Console.WriteLine("Nopeus: " + speed);
+            Console.WriteLine("Renkaat: " + tyres);
+
+        }
+
+        public void ToString()
+        {
+            string yht = name + " " + speed + " " + tyres;
+            Console.WriteLine(yht);
+        }
 
         private string name;
         private int speed;
@@ -24,6 +37,13 @@ namespace tehtava4
     {
         static void Main(string[] args)
         {
+            vehicle vh1 = new vehicle("Scoda GT", 200, 14);
+            vh1.PrintData();
+            Console.WriteLine("\n");
+            vh1.ToString();
+            Console.ReadLine();
+
+
         }
     }
 }
