@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Tehtava1_CheckBoxcontrol.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tehtava1_CheckBoxcontrol"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="Control_grid" HorizontalAlignment="Left" Height="501" Margin="123,82,0,0" VerticalAlignment="Top" Width="345" BorderThickness="10" BorderBrush="#FF8486DE" Background="#FFE1FFFF">
+            <CheckBox x:Name="checkBox" Content="Milk" HorizontalAlignment="Left" Margin="39,56,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox2" Content="Butter" HorizontalAlignment="Left" Margin="39,104,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox3" Content="Chicken" HorizontalAlignment="Left" Margin="39,151,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox4" Content="Beer" HorizontalAlignment="Left" Margin="39,197,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBox5" Content="Lemonade" HorizontalAlignment="Left" Margin="39,246,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="button" Content="Buy" HorizontalAlignment="Left" Margin="39,294,0,0" VerticalAlignment="Top" Click="button_Click"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="39,353,0,0" TextWrapping="Wrap" Text="Shopping List:" VerticalAlignment="Top"/>
+            <TextBox x:Name="Shopping_list_output" HorizontalAlignment="Left" Height="74" Margin="30,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Foreground="Black" BorderBrush="Black" SelectionHighlightColor="{x:Null}" Background="White"/>
+        </Grid>
+       
+
+    </Grid>
+</Page>

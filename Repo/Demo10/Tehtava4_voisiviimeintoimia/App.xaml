@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Tehtava4_voisiviimeintoimia.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tehtava4_voisiviimeintoimia"
+    RequestedTheme="Light">
+
+</Application>
