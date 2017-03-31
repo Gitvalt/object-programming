@@ -1,0 +1,7 @@
+[submodule "libfoo"]
+	path = include/Demo3
+	url = git://github.com/Gitvalt/object-programming.git/Demo3.git
+
+[submodule "libbar"]
+	path = include/Demo4_2
+	url = git://bar.com/git/lib.git
