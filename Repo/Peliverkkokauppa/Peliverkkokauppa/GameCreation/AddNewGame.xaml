@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Peliverkkokauppa.AddNewGame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Peliverkkokauppa"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFBFB6C9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="111"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Height="111" Background="#FF434B70" VerticalAlignment="Top" Grid.Row="0">
+            <Image x:Name="Logo" HorizontalAlignment="Left" Width="111" d:LayoutOverrides="TopPosition, BottomPosition"/>
+            <TextBlock x:Name="Nimi" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hiano Nimi" Margin="116,0,0,0" Width="474" FontSize="73.333" d:LayoutOverrides="HorizontalAlignment, TopPosition, BottomPosition"/>
+            <TextBlock x:Name="textBlock7" Margin="595,0,109,10" TextWrapping="Wrap" Text="Create Game" d:LayoutOverrides="LeftPosition, RightPosition" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontStyle="Italic"/>
+        </Grid>
+
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            <StackPanel x:Name="DescriptionStack" Height="47" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,76,10,0" BorderThickness="0" HorizontalAlignment="Right" Width="579">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Width="130" Text="Description" Height="42" VerticalAlignment="Bottom"/>
+
+                <TextBox x:Name="Description_input" TextWrapping="Wrap" Text="" Margin="0,0,0,-248" FontSize="18.667" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" PlaceholderText="" Width="400"/>
+            </StackPanel>
+            <StackPanel Margin="100,25,589,162" Orientation="Vertical" MinWidth="591">
+                <StackPanel x:Name="NameStack" Height="42" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Width="130" Text="Name"/>
+
+                    <TextBox x:Name="Name_input" TextWrapping="Wrap" Text="" Width="244" Foreground="Black"/>
+                    <TextBlock x:Name="NameError" TextWrapping="Wrap" Width="195" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="PriceStack" Height="42" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,25,-37,0">
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Width="130">
+            			<Run Text="Price"/>
+            			<LineBreak/>
+            			<Run/>
+                    </TextBlock>
+
+                    <TextBox x:Name="Price_input" TextWrapping="Wrap" Text="" Width="169" InputScope="CurrencyAmount"/>
+                    <TextBlock x:Name="PriceError" TextWrapping="Wrap" Text="" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="GenreStack" Orientation="Horizontal" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Margin="0,25,0,0">
+
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Width="130">
+            			<Run Text="Genre"/>
+            			<LineBreak/>
+            			<Run/>
+                    </TextBlock>
+                    <ComboBox x:Name="Genre_input" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="244"/>
+                    <TextBlock x:Name="GenreError" TextWrapping="Wrap" Text="" Width="195" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="DeveloperStack" Orientation="Horizontal" HorizontalAlignment="Left" Height="42" Margin="0,25,0,0">
+                    <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Width="130" Text="Developer"/>
+                    <ComboBox x:Name="Developer_Combo" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="244"/>
+                    <TextBlock x:Name="DeveloperError" TextWrapping="Wrap" Text="" Width="195" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel x:Name="ReleaseDateStack" Orientation="Horizontal" HorizontalAlignment="Left" Height="42" Margin="0,25,0,0">
+                    <TextBlock x:Name="textBlock8" TextWrapping="Wrap" Width="130" Text="ReleaseDate"/>
+                    <CalendarDatePicker x:Name="ReleaseDate_input" Margin="0,0,0,-2" VerticalAlignment="Stretch" Width="247" HorizontalAlignment="Stretch"/>
+                    <TextBlock x:Name="ReleaseDateError" TextWrapping="Wrap" Text="" Width="195" Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="MediaStack" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="100,0,0,64"/>
+            <Grid HorizontalAlignment="Right" Height="124" Margin="0,0,50,66" VerticalAlignment="Bottom" Width="246">
+                <Button x:Name="Cancel" Content="Cancel" Height="44" VerticalAlignment="Top" HorizontalAlignment="Stretch" Click="Cancel_Click" d:LayoutOverrides="LeftPosition, RightPosition"/>
+                <Button x:Name="Save" Content="Next" Height="44" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Click="Save_Click" d:LayoutOverrides="LeftPosition, RightPosition"/>
+
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Page>

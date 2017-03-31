@@ -1,0 +1,127 @@
+﻿<Page
+    x:Class="Peliverkkokauppa.GameSearch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Peliverkkokauppa"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Peliverkkokauppa"
+    mc:Ignorable="d">
+
+
+
+    <Page.Resources>
+        <DataTemplate x:Key="SelectedGames" x:DataType="data:Game">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="{x:Bind Name}" FontSize="16" TextAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Top" Padding="0,0,0,10"/>
+            </StackPanel>
+        </DataTemplate>
+
+
+        <DataTemplate x:Key="GameDataList" x:DataType="data:Game">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Width="480">
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Name}" HorizontalAlignment="Left" FontSize="16"/>
+                        <Image x:Name="Image" Source="{x:Bind Coverimg}" Width="200" Height="200"/>
+                    </StackPanel>
+                    <StackPanel Margin="20,0,0,0">
+                        <TextBlock Text="{x:Bind Description}" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Bind Price}" HorizontalAlignment="Left" FontSize="16"/>
+                                <TextBlock Text="€" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Genre:" HorizontalAlignment="Left" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="{x:Bind Genre}" HorizontalAlignment="Left" FontSize="16"/>
+                                
+                            </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="User rating:" HorizontalAlignment="Left" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="{x:Bind TotalScore}" HorizontalAlignment="Left" FontSize="16"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="#FFBFB6C9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="Header" Margin="0,0,0,44" Grid.Row="0" Background="#FF434B70">
+            <Image x:Name="Logo" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="111"/>
+            <TextBlock x:Name="Nimi" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hiano Nimi" VerticalAlignment="Top" Margin="116,0,0,0" Height="110" Width="844" FontSize="73.333"/>
+            <Button x:Name="Profile" Content="Profile" Height="61" Foreground="White" Margin="0,30,278,20" Grid.ColumnSpan="2" Click="Profile_Click" HorizontalAlignment="Right" Width="194"/>
+            <Button x:Name="Logout" Content="Logout" Height="61" Foreground="White" Margin="0,30,60,20" Click="Logout_Click" Grid.Column="1" HorizontalAlignment="Right" Width="194"/>
+
+
+        </Grid>
+        <Grid Grid.Row="1">
+
+
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Left" Margin="45,-22,0,40" Orientation="Horizontal">
+
+                <Button x:Name="ResetAllFilters" Content="Reset all filters" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ResetAllFilters_Click"/>
+
+                <Button x:Name="Reset" Content="Reset Genre filters" HorizontalAlignment="Stretch" Click="Reset_Click" VerticalAlignment="Stretch" Margin="150,0,0,0"/>
+
+            </StackPanel>
+
+            <Grid Grid.Row="1" Margin="0,0,301,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="116"/>
+                    <ColumnDefinition Width="184"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <GridView x:Name="Options" Grid.Column="0" ItemsSource="{x:Bind Genres}" HorizontalAlignment="Stretch" Margin="0,0,0,216" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemClick="Options_ItemClick" ScrollViewer.HorizontalScrollBarVisibility="Auto" FontSize="24" Padding="0,20,0,10" IsItemClickEnabled="True" Grid.ColumnSpan="2">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+
+                <GridView x:Name="Output" Grid.Column="2" ItemsSource="{x:Bind List}"  ItemTemplate="{StaticResource GameDataList}" Margin="0,0,15,0" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="24" Padding="0,20,40,10" ItemClick="Output_ItemClick" IsItemClickEnabled="True">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+                <ComboBox x:Name="OtherFilter" HorizontalAlignment="Stretch" Height="52" Margin="30,0,20,134" VerticalAlignment="Bottom" Grid.ColumnSpan="2" SelectionChanged="OtherFilter_SelectionChanged"/>
+            </Grid>
+
+            <Grid x:Name="HiddenOptions" HorizontalAlignment="Right" Width="291" Grid.Row="1" Margin="0,0,10,39" Visibility="Collapsed">
+                <Button x:Name="Save" Content="Save" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,89,69" Width="141" Click="Save_Click"/>
+                <Button x:Name="Cancel" Content="Cancel" VerticalAlignment="Bottom" Height="32" HorizontalAlignment="Right" Margin="0,0,89,10" Width="141" Click="Cancel_Click"/>
+                <ComboBox x:Name="ChangeSelectionBox" HorizontalAlignment="Right" Height="36" Margin="0,10,39,0" Grid.Row="1" VerticalAlignment="Top" Width="230" SelectedIndex="-1" SelectionChanged="ChangeSelectionBox_SelectionChanged"/>
+                <TextBlock x:Name="TextInfo" HorizontalAlignment="Left" Height="77" Margin="27,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225"/>
+
+                <GridView x:Name="SelectedValuesOutput" ItemsSource="{x:Bind SelectedDeletions}"  ItemTemplate="{StaticResource SelectedGames}" Margin="27,171,39,142" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="14" IsItemClickEnabled="True" ItemClick="SelectedValuesOutput_ItemClick">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Page>

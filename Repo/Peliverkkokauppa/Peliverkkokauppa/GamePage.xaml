@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Peliverkkokauppa.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Peliverkkokauppa"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFBFB6C9">
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF434B70">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="453*"/>
+                <ColumnDefinition Width="187*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Nimi" TextWrapping="Wrap" Text="Hiano Nimi" VerticalAlignment="Top" Margin="116,0,320,0" Height="111" FontSize="73.333" Grid.ColumnSpan="2"/>
+            <Image x:Name="Logo" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="111"/>
+            <!--<TextBlock x:Name="UsernameBox" Text="No user logged in" Width="412" Height="35" HorizontalAlignment="Right" VerticalAlignment="Top" TextAlignment="Center" FontSize="24" Margin="0,0,60,0" Grid.ColumnSpan="2"/>-->
+            <Button x:Name="Profile" Content="Profile" Height="61" Foreground="White" Margin="0,30,278,20" Grid.ColumnSpan="2" Click="Profile_Click" HorizontalAlignment="Right" Width="194"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="305" VerticalAlignment="Top" Width="425" Margin="32,139,0,-333" Source="{x:Bind Cover}"/>
+
+
+            <Canvas Height="81" VerticalAlignment="Top" Width="412" HorizontalAlignment="Right" Margin="0,445,60,-415" Background="#7A3F5E83" Grid.ColumnSpan="2">
+
+                <ComboBox x:Name="Rating" HorizontalAlignment="Left" ItemsSource="{x:Bind Values}" Height="45" VerticalAlignment="Center" Width="124" IsDropDownOpen="True"  Canvas.Left="157" Canvas.Top="26" SelectionChanged="Rating_SelectionChanged">
+                
+                </ComboBox>
+                <TextBlock x:Name="Score" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="135" FontSize="33.333" SelectionHighlightColor="{x:Null}" TextAlignment="Center" Canvas.Top="26" Text="{x:Bind ScoreNumber}" Canvas.Left="10"/>
+                <TextBlock x:Name="Rate" TextWrapping="Wrap" Text="Rate This Game" FontSize="14.667" SelectionHighlightColor="{x:Null}" HorizontalAlignment="Right" Width="255" Height="40" Canvas.Left="157"/>
+                <Button x:Name="ConfirmReview" Content="Confirm" HorizontalAlignment="Stretch" Height="45" Canvas.Left="304" Canvas.Top="26" VerticalAlignment="Stretch" Width="98" Click="ConfirmReview_Click"/>
+            </Canvas>
+            <Canvas  Height="212" Width="412" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,228,60,-329" Background="#7A3F5E83" Grid.ColumnSpan="2">
+                <TextBlock x:Name="Info" TextWrapping="Wrap" Text="Info:" VerticalAlignment="Top" Height="202" FontSize="14.667" SelectionHighlightColor="{x:Null}" Width="411"/>
+            </Canvas>
+            <Canvas Height="187" VerticalAlignment="Bottom" Margin="32,0,60,-607" Background="#7A3F5E83" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                <TextBlock x:Name="Description_t" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Height="185" FontSize="14.667" SelectionHighlightColor="{x:Null}" Width="1178"/>
+            </Canvas>
+            <Canvas Height="54" VerticalAlignment="Top" Margin="32,472,104,-415" Background="#7A3F5E83">
+                <TextBlock x:Name="Title" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nimi" VerticalAlignment="Top" Height="58" Width="760" FontSize="33.333"/>
+
+            </Canvas>
+            <Button x:Name="Front" Content="Frontpage" Height="61" Foreground="White" Margin="0,30,60,20" Click="Frontpage_Click" HorizontalAlignment="Right" Width="194" Grid.Column="1"/>
+        </Grid>
+        <Button x:Name="Buy" Content="Buy" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,143,276,0" Height="65" Width="193" FontSize="33.333" Click="Buy_Click"/>
+        <Canvas HorizontalAlignment="Right" Height="65" VerticalAlignment="Top" Width="189" Margin="0,143,61,0" Background="#7A3F5E83">
+            <TextBlock x:Name="Price" TextWrapping="Wrap" Text="{Binding Price_input}" Height="52" FontSize="33.333" SelectionHighlightColor="{x:Null}" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Canvas.Top="13"/>
+        </Canvas>
+
+
+    </Grid>
+
+</Page>

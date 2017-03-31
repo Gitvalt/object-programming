@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Tehtava.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tehtava"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Tehtava.test"
+    mc:Ignorable="d">
+
+    
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        
+        <StackPanel BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="646" Margin="10,10,0,0" VerticalAlignment="Top" Width="513">
+            <Grid HorizontalAlignment="Left" Height="367" Margin="10,0,0,0" Width="493">
+                <Image Stretch="Uniform" x:Name="ImageElement" Source="Assets/Media/employee01.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="493" Height="367" Visibility="Visible"/>
+                
+                <MediaElement x:Name="MediaElement" VerticalAlignment="Top" HorizontalAlignment="Left" Width="493" Height="367" Visibility="Collapsed"/>
+            
+            </Grid>
+            <TextBlock Text="Teksti" TextAlignment="Center" FontSize="25" x:Name="TekstiBlock" Width="auto" Height="auto"/>
+            <Grid Margin="0,22,0,0">
+                <Button x:Name="Previous" Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" FontSize="21.333" Margin="15,0,0,0"/>
+                <Button x:Name="Reset" Content="Reset" HorizontalAlignment="Center" VerticalAlignment="Top" Height="45" FontSize="21.333"/>
+                <Button x:Name="Last" Content="Last" HorizontalAlignment="Right" VerticalAlignment="Top" Height="45" FontSize="21.333" Margin="0,0,15,0"/>
+            </Grid>
+        </StackPanel>
+        <TextBlock x:Name="DebugBOX" HorizontalAlignment="Left" Height="375" Margin="572,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
+
+            </Grid>
+     
+
+
+
+
+</Page>
