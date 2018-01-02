@@ -96,6 +96,24 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DatabaseController.cs" />
+    <Compile Include="Classes\Error.cs" />
+    <Compile Include="Classes\Session.cs" />
+    <Compile Include="Fragments\Navbar.xaml.cs">
+      <DependentUpon>Navbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Authorized\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_LoginForm.xaml.cs">
+      <DependentUpon>UC_LoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Navbar.xaml.cs">
+      <DependentUpon>UC_Navbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NewsDisplay.xaml.cs">
+      <DependentUpon>UC_NewsDisplay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserManagment.xaml.cs">
       <DependentUpon>UserManagment.xaml</DependentUpon>
     </Compile>
@@ -147,14 +165,14 @@
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="login1.xaml.cs">
+    <Compile Include="Pages\Unauthorized\login1.xaml.cs">
       <DependentUpon>login1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frontpage.xaml.cs">
       <DependentUpon>Frontpage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\MediaFile.cs" />
-    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Profiili.xaml.cs">
       <DependentUpon>Profiili.xaml</DependentUpon>
     </Compile>
@@ -168,7 +186,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Peliverkkokauppa_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\ConnectionSettings.txt">
@@ -194,10 +211,12 @@
     <Content Include="Assets\Genres.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\logo-placeholder.png" />
     <Content Include="Assets\News.txt" />
     <Content Include="Assets\Reviews.txt" />
     <Content Include="Assets\testcustomer.txt" />
     <Content Include="Assets\Transactions.txt" />
+    <Content Include="Assets\x_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -212,6 +231,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Fragments\Navbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Authorized\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Navbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_NewsDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserManagment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,7 +307,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="login1.xaml">
+    <Page Include="Pages\Unauthorized\login1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

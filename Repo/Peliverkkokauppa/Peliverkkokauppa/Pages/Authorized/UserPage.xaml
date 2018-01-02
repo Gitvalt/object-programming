@@ -1,0 +1,25 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Peliverkkokauppa.Pages.Authorized"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UWP="using:Xamarin.Forms.Platform.UWP" xmlns:Peliverkkokauppa="using:Peliverkkokauppa" x:Name="page"
+    x:Class="Peliverkkokauppa.Pages.Authorized.UserPage"
+    mc:Ignorable="d" Width="{StaticResource defaultPageWidth}" Height="{StaticResource defaultPageHeight}">
+    <Page.TopAppBar>
+        <AppBar/>
+    </Page.TopAppBar>
+
+    <Grid Background="#FFD8D5DA" x:Name="MainContainer" HorizontalAlignment="Left" Width="{Binding Width, ElementName=page}" Height="{Binding Height, ElementName=page}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Peliverkkokauppa:UC_Navbar Margin="0,-28,0,-4" Grid.Row="1" Height="32" Width="1200"/>
+
+
+        <!--Contains the main parts of login page-->
+        <!--Header with logo, company name and exit button-->
+    </Grid>
+</Page>

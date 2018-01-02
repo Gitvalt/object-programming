@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Peliverkkokauppa
 {
-    class Employee : Person
+    class Employee : User
     {
         public Employee(string firstname, string lastname, string username, string password, string email, string phonenumber, string address, DateTime accountCreated)
             : base (firstname, lastname, username, password, email, phonenumber, address, accountCreated)

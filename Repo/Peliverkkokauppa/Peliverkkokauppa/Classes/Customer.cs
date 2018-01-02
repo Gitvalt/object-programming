@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Peliverkkokauppa
 {
-    class Customer : Person
+    class Customer : User
     {
         public Dictionary<int, Game> OwnedGame = new Dictionary<int, Game>();
         public List<Customer> Customers { get; set; }

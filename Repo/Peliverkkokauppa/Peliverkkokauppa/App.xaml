@@ -4,5 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Peliverkkokauppa"
     RequestedTheme="Light">
+    <Application.Resources>
+        <SolidColorBrush x:Key="headerColor" Color="#FF666666"/>
+        <x:Double x:Key="login_inputTextfields">400</x:Double>
+        <x:String x:Key="CompanyName">Lorem ipsum</x:String>
+        <x:Double x:Key="login_formHeight">40</x:Double>
+        <x:Double x:Key="defaultPageWidth">1200</x:Double>
+        <x:Double x:Key="defaultPageHeight">700</x:Double>
+    </Application.Resources>
 
 </Application>
